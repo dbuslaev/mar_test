@@ -8,6 +8,8 @@ It also saves the css file itself on the drive.
 
 class InsertCss extends DataCss {
 
+  const CSS_PATH = '/mnt/tmp/';
+
   const CODE_EXT_ERROR = -3;
   const CODE_FILE_MISSING = -4;
   const CODE_RESPONSE_EMPTY = -5;
@@ -53,7 +55,7 @@ class InsertCss extends DataCss {
 
 
   protected function localCssFilename() {
-    return '/mnt/tmp/'.$this->record_id.'.css';
+    return static::CSS_PATH.$this->record_id.'.css';
   }
 
 

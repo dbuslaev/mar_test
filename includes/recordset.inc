@@ -10,6 +10,7 @@ This is a quick caching solution without any additional software needed.
 class Recordset extends CreativeMongo {
 
   // consider local file data to be usable for these many seconds
+  const CSS_PATH = '/mnt/tmp/';
   const LOCAL_DATA_RELEVANT = 1;
 
 
@@ -19,7 +20,7 @@ class Recordset extends CreativeMongo {
 
 
   protected function localJsonFilenameAll() {
-    return '/mnt/tmp/'.static::TABLE_NAME.'.json';
+    return static::CSS_PATH.static::TABLE_NAME.'.json';
   }
 
 
@@ -30,7 +31,7 @@ class Recordset extends CreativeMongo {
 
 
   protected function localJsonFilenameById($record_id) {
-    return '/mnt/tmp/'.static::TABLE_NAME.'_'.$record_id.'.json';
+    return static::CSS_PATH.static::TABLE_NAME.'_'.$record_id.'.json';
   }
 
 

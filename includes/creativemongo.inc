@@ -21,7 +21,7 @@ class CreativeMongo {
   protected function find($params = array()) {
     $this->response = array();
 
-    $mongo_client = new MongoClient();
+    $mongo_client = new Mongo();
     $collection = $mongo_client->selectCollection(static::DB_NAME, static::TABLE_NAME);
 
     $records = $collection->find($params);
@@ -34,7 +34,7 @@ class CreativeMongo {
   protected function insert($record) {
     $this->response = array();
 
-    $mongo_client = new MongoClient();
+    $mongo_client = new Mongo();
     $collection = $mongo_client->selectCollection(static::DB_NAME, static::TABLE_NAME);
 
     $record[static::TABLE_TIME] = new MongoDate(time());
